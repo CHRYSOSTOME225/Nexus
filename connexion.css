@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #d9ffe8, #a8f5c5, #eafff1);
+    color: #123c29;
+    overflow: hidden;
+}
+
+/* Fond animé */
+.fond {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.orb {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: 0.55;
+    animation: mouvement 12s infinite alternate ease-in-out;
+}
+
+.orb1 {
+    background: #55e890;
+    top: -80px;
+    left: -60px;
+}
+
+.orb2 {
+    background: #8affbd;
+    right: -80px;
+    top: 20%;
+    animation-delay: 2s;
+}
+
+.orb3 {
+    background: #28c978;
+    bottom: -100px;
+    left: 35%;
+    animation-delay: 4s;
+}
+
+@keyframes mouvement {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(80px, 50px) scale(1.2);
+    }
+}
+
+/* Conteneur principal */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+/* Carte de connexion */
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 42px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(22px);
+    box-shadow: 0 25px 70px rgba(24, 120, 70, 0.2);
+    animation: apparition 0.8s ease;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #08783e;
+    margin-bottom: 30px;
+}
+
+/* Textes */
+.login-card h2 {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #32915c;
+    margin-bottom: 10px;
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #104d2d;
+    margin-bottom: 12px;
+}
+
+.description {
+    text-align: center;
+    color: #527763;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Champs */
+.champ {
+    margin-bottom: 20px;
+}
+
+.champ label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #245b3c;
+}
+
+.champ input {
+    width: 100%;
+    padding: 15px 17px;
+    border: 1px solid rgba(31, 135, 78, 0.2);
+    border-radius: 13px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.75);
+    color: #174c2d;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.champ input:focus {
+    border-color: #28b866;
+    box-shadow: 0 0 0 4px rgba(40, 184, 102, 0.13);
+}
+
+/* Mot de passe */
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0 25px;
+    font-size: 12px;
+    color: #47735a;
+}
+
+.options a {
+    color: #168849;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton */
+.btn-connexion {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #21b866, #08783e);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(8, 120, 62, 0.25);
+    transition: 0.3s;
+}
+
+.btn-connexion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(8, 120, 62, 0.35);
+}
+
+.btn-connexion:active {
+    transform: scale(0.98);
+}
+
+/* Message */
+#message {
+    text-align: center;
+    min-height: 20px;
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Inscription */
+.signup {
+    text-align: center;
+    margin-top: 28px;
+    color: #527763;
+    font-size: 13px;
+}
+
+.signup a {
+    color: #08783e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .login-card {
+        padding: 32px 24px;
+        border-radius: 22px;
+    }
+
+    .login-card h1 {
+        font-size: 29px;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

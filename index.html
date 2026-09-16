@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — Catalogue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="fond">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">NEXUS</div>
+
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#catalogue">Catalogue</a>
+            <a href="#ajouter">Ajouter</a>
+            <button id="btnDeconnexion">Déconnexion</button>
+        </div>
+    </nav>
+
+    <header class="hero" id="accueil">
+        <img src="images/hero-background.png" alt="Image de présentation" class="hero-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="sur-titre">NEXUS COLLECTION</p>
+            <h1>Votre catalogue.<br>Votre univers.</h1>
+
+            <p>
+                Découvrez, gérez et organisez facilement
+                tous vos produits dans un espace moderne.
+            </p>
+
+            <a href="#catalogue" class="btn-principal">
+                Découvrir le catalogue
+            </a>
+        </div>
+    </header>
+
+    <section class="galerie-produits">
+        <img src="images/img1.jpg" alt="Présentation 1">
+        <img src="images/img2.jpg" alt="Présentation 2">
+        <img src="images/img3.jpg" alt="Présentation 3">
+        <img src="images/img4.jpg" alt="Présentation 4">
+        <img src="images/img5.jpg" alt="Présentation 5">
+        <img src="images/img6.jpg" alt="Présentation 6">
+    </section>
+
+    <section class="statistiques">
+        <div class="stat-card">
+            <span id="totalProduits">0</span>
+            <p>Produits</p>
+        </div>
+
+        <div class="stat-card">
+            <span id="totalStock">0</span>
+            <p>Articles en stock</p>
+        </div>
+
+        <div class="stat-card">
+            <span id="totalValeur">0</span>
+            <p>Valeur totale</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section" id="catalogue">
+            <div class="section-heading">
+                <p class="sur-titre">EXPLOREZ</p>
+                <h2>Notre catalogue</h2>
+                <p>Recherchez et gérez vos produits facilement.</p>
+            </div>
+
+            <div class="outils">
+                <input
+                    type="search"
+                    id="recherche"
+                    placeholder="🔎 Rechercher un produit..."
+                >
+
+                <select id="filtreCategorie">
+                    <option value="Toutes">Toutes les catégories</option>
+                    <option value="Électronique">Électronique</option>
+                    <option value="Vêtements">Vêtements</option>
+                    <option value="Alimentaire">Alimentaire</option>
+                    <option value="Bâtiment">Bâtiment</option>
+                </select>
+            </div>
+
+            <div id="listeProduits" class="liste-produits"></div>
+        </section>
+
+        <section class="section section-formulaire" id="ajouter">
+            <div class="section-heading">
+                <p class="sur-titre">GESTION</p>
+                <h2>Ajouter un produit</h2>
+                <p>Complétez le formulaire pour enregistrer un produit.</p>
+            </div>
+
+            <form id="formProduit" class="form-produit">
+                <div class="champ">
+                    <label for="nom">Nom du produit</label>
+                    <input type="text" id="nom" required>
+                </div>
+
+                <div class="champ">
+                    <label for="categorie">Catégorie</label>
+                    <select id="categorie" required>
+                        <option value="">Choisir une catégorie</option>
+                        <option value="Électronique">Électronique</option>
+                        <option value="Vêtements">Vêtements</option>
+                        <option value="Alimentaire">Alimentaire</option>
+                        <option value="Bâtiment">Bâtiment</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label for="prix">Prix en F CFA</label>
+                    <input type="number" id="prix" min="0" required>
+                </div>
+
+                <div class="champ">
+                    <label for="stock">Quantité en stock</label>
+                    <input type="number" id="stock" min="0" required>
+                </div>
+
+                <div class="champ">
+                    <label for="image">Photo du produit</label>
+                    <input type="file" id="image" accept="image/*">
+                </div>
+
+                <div id="apercuImage"></div>
+
+                <button type="submit" class="btn-submit">
+                    Enregistrer le produit
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 NEXUS — Votre catalogue, votre univers.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
